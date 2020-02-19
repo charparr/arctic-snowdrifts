@@ -115,16 +115,21 @@ def compute_area_and_volume_where_depth_exceeds_threshold(d):
             # Create sub-dict for each test threshold
             thresh_k = str(thresh) + ' m threshold'
             d[k][thresh_k] = {}
+
             # Compute binary exceedance mask for each threshold
             drift_mask = (d[k]['arr'] > thresh)
+
             # Compute snow depth map where mask is 'True' aka depth > threshold
             exceeding_depth_values = drift_mask * d[k]['arr']
+
             # Set masked out depth values to nan so they can be ignored
             exceeding_depth_values[exceeding_depth_values == 0] = np.nan
+
             # Compute Area Exceeding Threshold (i.e. count number of pixels), pixel size=1
             d[k][thresh_k]['drift area m^2'] = int(np.nansum(exceeding_depth_values))
             d[k][thresh_k]['pct. drift area'] = (d[k][thresh_k]['drift area m^2'] / d[k]['total area m^2']) * 100
-            # # Compute Volume Exceeding Threshold (i.e. sum of pixel intensities), pixel size=1
+            
+            # Compute Volume Exceeding Threshold (i.e. sum of pixel intensities), pixel size=1
             d[k][thresh_k]['drift volume m^3'] = np.nansum(exceeding_depth_values * d[k]['arr'])
             d[k][thresh_k]['pct. drift volume'] = (d[k][thresh_k]['drift volume m^3'] / d[k]['total volume m^3']) * 100
             d[k]['pct. area results'].append(d[k][thresh_k]['pct. drift area'])
@@ -221,7 +226,7 @@ def dict_to_df(d):
         total_drift_volumes.append(d[k]['total snowdrift volume m^3'])
         drift_intensities.append(d[k]['area normalized snowdrift volume m^3/m^2'])
 
-    df = pd.DataFrame([years, swaths, total_areas, total_drift_volumes, mus, sigmas,
+    df = pd.DataFrame([years, swaths, total_areas, total_volumes, mus, sigmas,
                       drift_depth_thresholds, pct_drift_areas, pct_drift_volumes,
                       total_drift_areas, total_drift_volumes,
                       drift_intensities]).T
