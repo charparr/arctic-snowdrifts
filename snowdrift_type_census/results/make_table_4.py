@@ -18,7 +18,7 @@ df['Drift Area [m^2]'] = df['Drift Area [m^2]'].astype(int)
 df['Mean Drift Volume [m^3]'] = df['Mean Drift Volume [m^3]'].astype(int)
 
 df.columns = ['Class','Swath','Drift Area (m<sup>2</sup>)', 'Mean Drift Depth (m)', 'Drift Volume (m<sup>3</sup>)',
-			  'Std. Depth (m)', 'CV Depth (m)', 'NDV (m)']
+			  'Std. Depth (m)', 'CV Depth', 'NDV (m)']
 
 
 
