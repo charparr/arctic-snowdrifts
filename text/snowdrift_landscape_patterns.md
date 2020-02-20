@@ -119,9 +119,9 @@ To explore more fully the difference in the nature of the drift traps in the two
     6. other.               (n=6)  
 Two of the “green” landforms are unique to high latitudes: water tracks and ice wedge polygons.
 
-###### *Figure 8: Six snowdrift classes.* 
-
 ![](../figs/f8_snowdrift_types_300.png)
+
+###### *Figure 8: Six snowdrift classes.* 
 
 Water tracks (Figs. 8a and 9: see also McNamara et al., 1998; Trochim et al., 2016; Paquette et al., 2017) are lightly incised hillslope drainage pathways that show little branching and are controlled by permafrost. Being of limited depth, the tracks typically fill in winter, taking on an equilibrium drift profile (Tabler, 1975). However, it is common for water tracks to come in groups of near-parallel down-slope networks, and when these are oriented across the wind, upwind tracks can rob downwind tracks of wind-blown snow, leaving the downwind tracks unfilled. While it remains speculative, the quasi-regular spacing of hillslope water tracks, which is quite common in the HV swath (Fig. 9:  see also König and Sturm, 1998), could be related to winter drifting and filling vs. non-filling drifts. The connection between winter and summer processes would be that drift-augmented snowmelt run-off within a water track would flush the track each spring, accelerating its incision through both thermal and physical erosion, while the scouring of snow from the interfluves between tracks would ensure little erosion in those locations. Downwind, where the drifts would no longer be filled, the erosion would decrease.
 
@@ -129,13 +129,19 @@ Water tracks (Figs. 8a and 9: see also McNamara et al., 1998; Trochim et al., 20
 
 Ice wedge drifts (Figs. 8b and 10) form in the network of troughs surrounding high-centered polygons (Black, 1952; Jorgenson and Osterkamp, 2005; Gamon et al., 2012). These troughs (which can be up to 1.5 m deep) develop because the ice wedge areas thaw more rapidly than the permafrost in polygon centers. Because polygon fields consist of repeated patterns of high and low ground, ice wedge drifts (Fig. 10) also occur on repeating spatial scales, with distances between drifts ranging from 3 to 20 meters. Where there is sufficiently strong winds and deep enough troughs, the polygon centers can sometimes become scoured free of all snow, yet immediately adjacent to this bare ground are drifts as much as 1.5 m deep. In our study area polygonal ground is not the dominant land form, though it is present, but to the north on the Arctic coastal plain, vast areas are covered by polygon fields, making this type of Arctic snow drift widespread. Like water track drifts, ice wedge drifts general tend to fill to equilibrium.
 
+![](../figs/f10_ms_ice_wedge_drifts.png)
+
 ###### *Figure 10: Ice wedge drifts on the Arctic coastal plain near the study area. Here the drifts in the troughs between partially bare polygon centers were over 1.5 m deep.*
 
 Cutbanks along streams and rivers trap large snowdrifts that are sometimes referred to as  ribbon drifts due to their long extent and sinuous outline (Figures 1, 8c, and 11). The drainage features that produce these drifts are larger, more incised, and most importantly, have sharper breaks in slope along channel edges than do water tracks. One oddity of the geography and climatology of northern Alaska is that many of the stream and river drainages trend south to north, while the winter winds are often either from the east or west, creating an ideal scenario for producing this type of drift. Because these traps are both deep and wide, they generally do not fill during the winter, which was what motivated Benson (1983) to use this type of drift to measure winter wind-blown flux rates. In fact, depending on size and the total winter wind-blown flux, stream drifts can switch from non-filling to filling depending on the winter. In our experience, it is stream width (not depth) that determines whether this transition is likely to occur.  When the drift forming on the windward cutbank manages to coalesce with the smaller drift that forms on the opposite cutbank facing into the wind (a leading edge drift according to Kuz’min, 1963), then an equilibrium profile is soon achieved (see Benson and Sturm, 1992; Figure 2) and the drift ceases to grow further.
 
+![](../figs/f11_ms_stream_drift.png)
+
 ###### *Figure 11: A stream drift (also ribbon drift) in the Brooks Range. The wind was from the right (west) and has been moving snow into this side valley for over 6 months, but it has not yet, and is unlikely to ever, fill the drift trap.*
 
 Lake snowdrifts (Figures 1, 8d, and 12) tend to be crescentic. Many of the lakes in northern Alaska are incised into the landscape and have a quasi-circular shape. Given such a shape, they (in principle) could trap wind-blown snow from any direction and so produce a ‘flux rose’ in the form of lake drifts. More often, though, the prevailing winds come from one direction and these produce a crescentic drift on the windward side of the lake while on the opposite side there is a scour zone (Sturm and Liston, 2003; Rees et al., 2013). Filled lake drifts create a smooth ‘apron’ with a near-constant slope down to the lake ice surface, while non-filling lake drifts have cornice edges and a sheer drop to the ice below (Fig. 12).
+
+![](../figs/f12_ms_lake_drifts.png)
 
 ###### *Figure 12: A crescentic lake drift in the CLPX swath. The snowmobile is at the edge of the underlying ground topography, with the drift forming out from there onto the snow-covered ice surface. This drift was 5 m deep just in front of the snowmobile.*
 
@@ -147,20 +153,33 @@ The drift type census appears in Table 4. Broadly, the six classes can be divide
 
 ###### Table 4: Mean Drift Type Statistics by Swath: *f* Indicates Filling; *nf* Indicates Non-filling
 
-| Swath   | Class           | Drift Area (m<sup>2</sup>)   | Mean Drift Depth (m)   | Drift Volume (m<sup>3</sup>)   | Std. Depth (m)   | CV Depth (m)   | NDV (m)   |
-|:--------|:----------------|:-----------------------------|:-----------------------|:-------------------------------|:-----------------|:---------------|:----------|
-| CLPX    | ice wedge (f)   | 369                          | 0.89                   | 350                            | 0.11             | 0.12           | 0.9       |
-| HV      | ice wedge (f)   | 850                          | 0.91                   | 775                            | 0.1              | 0.11           | 0.91      |
-| CLPX    | lake (nf)       | 23832                        | 1.11                   | 26790                          | 0.25             | 0.22           | 1.11      |
-| HV      | lake (nf)       | 71678                        | 1.37                   | 98619                          | 0.3              | 0.22           | 1.37      |
-| CLPX    | other           | 212890                       | 0.89                   | 187530                         | 0.13             | 0.15           | 0.89      |
-| HV      | other           | 12722                        | 1.05                   | 12185                          | 0.19             | 0.18           | 1.05      |
-| CLPX    | outcrop (nf)    | 5431                         | 1.32                   | 7522                           | 0.35             | 0.26           | 1.32      |
-| HV      | outcrop (nf)    | N/A                          | N/A                    | N/A                            | N/A              | N/A            | N/A       |
-| CLPX    | stream (nf)     | 20247                        | 1.29                   | 25466                          | 0.31             | 0.24           | 1.29      |
-| HV      | stream (nf)     | 2182                         | 1.16                   | 2563                           | 0.29             | 0.25           | 1.16      |
-| CLPX    | water track (f) | 2287                         | 0.87                   | 2056                           | 0.1              | 0.11           | 0.86      |
-| HV      | water track (f) | 20967                        | 0.99                   | 21583                          | 0.28             | 0.28           | 0.99      |
+| Swath   | Class           | Drift Area (m<sup>2</sup>)   | Mean Drift Depth (m)   | Drift Volume (m<sup>3</sup>)   | Std. Depth (m)   | CV Depth   | NDV (m)   |
+|:--------|:----------------|:-----------------------------|:-----------------------|:-------------------------------|:-----------------|:-----------|:----------|
+| CLPX    | ice wedge (f)   | 369                          | 0.89                   | 350                            | 0.11             | 0.12       | 0.9       |
+| HV      | ice wedge (f)   | 850                          | 0.91                   | 775                            | 0.1              | 0.11       | 0.91      |
+| CLPX    | lake (nf)       | 23832                        | 1.11                   | 26790                          | 0.25             | 0.22       | 1.11      |
+| HV      | lake (nf)       | 71678                        | 1.37                   | 98619                          | 0.3              | 0.22       | 1.37      |
+| CLPX    | other           | 212890                       | 0.89                   | 187530                         | 0.13             | 0.15       | 0.89      |
+| HV      | other           | 12722                        | 1.05                   | 12185                          | 0.19             | 0.18       | 1.05      |
+| CLPX    | outcrop (nf)    | 5431                         | 1.32                   | 7522                           | 0.35             | 0.26       | 1.32      |
+| HV      | outcrop (nf)    | N/A                          | N/A                    | N/A                            | N/A              | N/A        | N/A       |
+| CLPX    | stream (nf)     | 20247                        | 1.29                   | 25466                          | 0.31             | 0.24       | 1.29      |
+| HV      | stream (nf)     | 2182                         | 1.16                   | 2563                           | 0.29             | 0.25       | 1.16      |
+| CLPX    | water track (f) | 2287                         | 0.87                   | 2056                           | 0.1              | 0.11       | 0.86      |
+| HV      | water track (f) | 20967                        | 0.99                   | 21583                          | 0.28             | 0.28       | 0.99      |
+
+
+![](../figs/f13_ndv_by_drift_class_300.png)
+
+###### *Figure 13: NDV values (snowdrift volume-to-area ratios) for six classes of drifts. The red dashed line roughly separates filling from non-filling drifts*
+
+The other diagnostic metric related to drift type is the coefficient of variance (CV) of drift depth (Table 4 and Fig. 14). This metric captures some of the differences in filling and non-filling drift behavior.  For example, ice wedge drift CV values are low and similar for both swaths, suggesting that across the study area the geometry of the ice wedge polygons is constant, with the ice wedge troughs generally not so deep that they cannot be filled with snow each winter. This similarity makes sense: trough depth is controlled by subsurface thawing, a regional effect of summer temperature. Our field experience is that the ice wedge troughs are usually filled with snow by January, and that the fill depth changes little from one winter to the next.  In contrast, the CV values for stream, lake, and outcrop drifts are more than twice that of ice wedge troughs.  These types of drifts are unlikely to fill during the winter, hence the drift depth tends to vary depending on winter conditions. More puzzling, the CV values for water track drifts differed markedly between the two swaths, with the HV water track drifts showing nearly 3X the variation of CLPX swath. This difference suggests that the HV water tracks are in some ways different than the CLPX water tracks, and perhaps do not fill as often.  Perhaps the HV water tracks are deeper, or as suggested in Figure 9, perhaps not all of the fill due to upwind stockpiling of snow.
+
+![](../figs/f14_cv_by_drift_class_300.png)
+
+###### *Figure 14: CV values by drift class.*
+
+In Figure 15 we have tried to summarize one of the key differences in drift types by regressing drift volume against drift area using data from all 59 drift samples. The slopes of the lines  (i.e., NDV) range from 0.86 (ice wedge drifts) to 1.56 (outcrop drifts), with a value of around 1.1 appearing to be the transition value between f and nf drifts. Landscapes with drift traps that have low slopes on this plot will in most winters trap the same amount of snow, while landscapes with high slopes will have excess trapping capacity and will respond to changes in the total winter wind-blown flux through changes in the volume (and depth) of the drifts. The figure suggests why in the general census (Table 3) the CLPX drifts exhibited greater variability in both depth and volume (Fig. 7 bottom) than the HV drifts: the CLPX swath contains more high slope drift traps, hence represents a more dynamic environment for drift formation. 
 
 
 
