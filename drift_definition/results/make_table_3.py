@@ -1,6 +1,6 @@
 import pandas as pd
 
-df = pd.read_csv('general_drift_census_results_adjusted.csv')
+df = pd.read_csv('general_drift_census_results_adjusted.csv', index_col=False)
 
 df2 = df[['Year', 'Swath','Mean Depth $m$', 'Snowdrift Depth Threshold $m$',
        '%DA', '%DV', 'Total Drift Area $m^2$', 'Total Drift Volume $m^3$',
@@ -14,13 +14,17 @@ df2.columns = ['Year', 'Swath', 'Mean Depth (m)',
 
 df2.sort_values('Year', inplace=True)
 
+df2.set_index('Year', inplace=True)
+df2.loc['AVE.'] = df2.mean().round(2)
+
+
 df2['%DA'] = df2['%DA'].round(2)
 df2['%DV'] = df2['%DV'].round(2)
 df2['Drift Susceptibility (m)'] = df2['Drift Susceptibility (m)'].round(2)
 df2['Mean Depth (m)'] = df2['Mean Depth (m)'].round(2)
 df2['Mean Drift Depth (m)'] = df2['Mean Drift Depth (m)'].round(2)
-df2['Total Drift Area (m<sup>2</sup>)'] = df2['Total Drift Area (m<sup>2</sup>)'].round()
-df2['Total Drift Area (m<sup>2</sup>)'] = df2['Total Drift Area (m<sup>2</sup>)'].round(0)
+
 df2['Total Drift Area (m<sup>2</sup>)'] = df2['Total Drift Area (m<sup>2</sup>)'].astype(int)
 df2['Total Drift Volume (m<sup>3</sup>)'] = df2['Total Drift Volume (m<sup>3</sup>)'].astype(int)
 
+print(df2.to_markdown())
