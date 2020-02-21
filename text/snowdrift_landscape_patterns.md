@@ -8,9 +8,9 @@ Between 2012 and 2018 we mapped the near-peak seasonal snow depths across two sw
 
 Arctic snowdrifts are prominent landscape features that can extend for many kilometers and can be over 15 m deep. Over several decades of research (Benson, 1982; Benson and Sturm, 1993; Sturm and Wagner 2010; Sturm and Stuefer, 2013) it has been documented that these large drifts form reliably every winter, while summer imagery (Lauriol et al., 1986; Macander et al., 2015) shows that many of the drift persist through July before melting. Given their size, their recurrence, and the fact that the Arctic winter lasts 8-10 months of the year, we would suggest these drifts are essential components of the Arctic landscape, geomorphic features important in their own right.  Elsewhere, in the Rocky Mountains (Winstral et al., 2002; Hiemstra et al., 2006), in the Sierra Nevada (Kirchner et al., 2014), across the American and Canadian prairies (Pomeroy et al., 1993; Lapen and Martz, 1996), and in the high basins of the European Alps (Fohn and Meister, 1983; Schmidt 2009) and Spanish Pyrenees (Mases et al., 1998; Revuelto et al., 2014) similar large drifts form and are also long-lasting landscape features. We think these features deserve more scientific attention.
 
-###### *Figure 1. Snow drifts on the North Slope of Alaska, May 25, 2019. The broad white areas are frozen lakes, largely snow-free. The sinuous white areas are ribbon drifts that formed in the lee of river cutbanks, lake edges, and bluffs. Here they range from several to more than 15 m deep, and from 0.5 to over 5 km in lineal extent.*
-
 ![](../figs/f1_ms_lake_drifts.jpg)
+
+###### *Figure 1. Snow drifts on the North Slope of Alaska, May 25, 2019. The broad white areas are frozen lakes, largely snow-free. The sinuous white areas are ribbon drifts that formed in the lee of river cutbanks, lake edges, and bluffs. Here they range from several to more than 15 m deep, and from 0.5 to over 5 km in lineal extent.*
 
 The impact of these large drifts, whether in the Arctic or elsewhere, extends well beyond the area covered by the drifts themselves. Conjugate scour zones form upwind and are the source of the additional snow for the drifts. These extensive scour zones, often several hundred meters wide and tens of kilometers long, serve important ecosystem functions for animals. For example they allow for easy travel and winter grazing for caribou (Pruitt, 1959). They also create trafficability problems for oil and gas exploration, which is performed in winter and requires sufficient snow to avoid damage to the underlying tundra (Felix and Raynolds, 1989; Sturm et al., 2019; Raynolds et al., 2020).
 
@@ -21,6 +21,8 @@ Finally, we explore the sensitivity of the conjugate system of drifts and scour 
 ## Background
 
 The connections between snow, wind transport, and topography, while well known, are still not fully understood, perhaps because the simplicity of the triadic relationship shown in Figure 2 masks surprising layers of complexity. For example, drift-available snow differs from the amount of snow actually present on the ground, which is simply the sum of winter precipitation (P) minus (or plus) transported snow (T), less sublimated snow (S). Available snow is controlled by vegetation (V), by wind shear stress, and by the spatial variability of snow adhesion. This latter property has proven difficult to measure or model because snow adhesion varies with grain characteristics and sintering, a temperature-dependent aging process that can be wildly heterogenous. It is not surprising, therefore, that prior studies have documented a 10X range in snow transport rates at any given wind speed (Sturm and Stuefer, 2013), a spread largely reflecting a wide range of surface snow conditions and therefore snow availability.
+
+![](../figs/f2_snow_drift_triad.png)
 
 ###### *Figure 2. The triadic relationship between snow availability, wind, and topography.*
 
@@ -64,6 +66,24 @@ The snow depth maps were field-validated and adjusted using 141,207 ground-based
 
 ###### Table 2. Field Depths (Vector) Minus Snow Depth Maps (Raster) Prior to Correction, All Years.
 
+| Year   | Swath   | Count   | Mean (m)   | Std. (m)   |
+|:-------|:--------|:--------|:-----------|:-----------|
+| 2012   | CLPX    | 32571   | 0.16       | 0.12       |
+| 2012   | HV      | 24601   | -0.04      | 0.16       |
+| 2013   | CLPX    | 27555   | 0.21       | 0.11       |
+| 2013   | HV      | 11718   | -0.03      | 0.16       |
+| 2015   | CLPX    | 8308    | 0.36       | 0.14       |
+| 2015   | HV      | 7030    | 0.18       | 0.14       |
+| 2016   | CLPX    | 11410   | 0.38       | 0.11       |
+| 2016   | HV      | N/A     | N/A        | N/A        |
+| 2017   | CLPX    | 6165    | 0.4        | 0.15       |
+| 2017   | HV      | 5797    | -0.05      | 0.18       |
+| 2018   | CLPX    | 4178    | 0.25       | 0.18       |
+| 2018   | HV      | 1874    | -0.08      | 0.5        |
+| Mean   |         | 12837   | 0.16       | 0.18       |
+| Total  |         | 141207  |            |            |
+
+
 ## Results
 
 ### A General Snowdrift Census
@@ -71,6 +91,8 @@ The snow depth maps were field-validated and adjusted using 141,207 ground-based
 To conduct a snowdrift census, we had to define a drift in a manner that could be automated and allowed for inter-annual variability. There is general agreement that a drift is an area where there has been an additional accumulation of snow deposited by the wind (T), but how much, and how can we be sure that the greater accumulation is actually a function of T rather than P? Researchers routinely recognize drifts in the field1, but that identification relies on layers of spatial and visual information including geometry (like recognizing a cornice lip), snow texture, and shadowing, all factors difficult to derive from remote sensing products in an automated fashion.
 
 After a number of trials, we found that we could adequately define a drift in an area of interest (AOI) through the interaction of two functions: F1 - the percentage of the AOI covered by drifts (%DA), and F2 - the percentage of total snow volume in the AOI contained in the drifts (%DV). Using these functions, a depth threshold could be identified and all areas deeper than the threshold assumed to be drifts. To illustrate the procedure consider an AOI with normal snow depth distribution with a mean (μ) of 0.50 m and a standard deviation (σ) of 0.20 m (Figure 6).
+
+![](../figs/f6_ms_drift_definition.png)
 
 ###### *Figure 6: Setting the drift depth threshold using depth and volume cumulative distribution curves.*
 
@@ -124,6 +146,8 @@ Two of the “green” landforms are unique to high latitudes: water tracks and 
 ###### *Figure 8: Six snowdrift classes.* 
 
 Water tracks (Figs. 8a and 9: see also McNamara et al., 1998; Trochim et al., 2016; Paquette et al., 2017) are lightly incised hillslope drainage pathways that show little branching and are controlled by permafrost. Being of limited depth, the tracks typically fill in winter, taking on an equilibrium drift profile (Tabler, 1975). However, it is common for water tracks to come in groups of near-parallel down-slope networks, and when these are oriented across the wind, upwind tracks can rob downwind tracks of wind-blown snow, leaving the downwind tracks unfilled. While it remains speculative, the quasi-regular spacing of hillslope water tracks, which is quite common in the HV swath (Fig. 9:  see also König and Sturm, 1998), could be related to winter drifting and filling vs. non-filling drifts. The connection between winter and summer processes would be that drift-augmented snowmelt run-off within a water track would flush the track each spring, accelerating its incision through both thermal and physical erosion, while the scouring of snow from the interfluves between tracks would ensure little erosion in those locations. Downwind, where the drifts would no longer be filled, the erosion would decrease.
+
+![](../figs/f9_hv_watertrack_drift_w_profiles.png)
 
 ###### *Figure 9: Regularly spaced water tracks in the HV swath. The upper panorama shows 9 nearly parallel tracks with the dark areas between the tracks being thin snow areas that have been cratered by foraging caribou. The depth cross-section (blue) indicates the tracks in this survey  held about 1.2 m of drift snow, while ground observations suggested that most of the tracks had achieved equilibrium profiles. The transport wind was from the west (right side of image). Because the tracks favor the growth of willow and birch shrubs, they appear darker than the surrounding tundra in summer (bottom panel).*
 
