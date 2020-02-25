@@ -28,7 +28,7 @@ def rastersstats_to_dict(dir):
     return rstr_dict
 
 d1 = rastersstats_to_dict('../thesis/gis/raster/hv/snow_depth/corrected/kidney_lake/')
-d2 = rastersstats_to_dict('../thesis/fidelity_analysis/results/2015_v._2017/')
+d2 = rastersstats_to_dict('../thesis/fidelity_analysis/results/kidney_lake/2015_v._2017/')
 d = {**d1, **d2}
 wanted_keys = ['../thesis/gis/raster/hv/snow_depth/corrected/kidney_lake/hv_kidney_lake_depth_2015.tif',
                '../thesis/gis/raster/hv/snow_depth/corrected/kidney_lake/hv_kidney_lake_depth_2017.tif',
