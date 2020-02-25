@@ -44,11 +44,17 @@ def rastersstats_to_dict(dir):
 
         src = rasterio.open(f)
         rstr_dict[f]['arr'] = src.read(1)
+        # mask with zero so that metrics compute
+        rstr_dict[f]['arr'][rstr_dict[f]['arr'] == src.nodata] = 0
+        rstr_dict[f]['arr'][rstr_dict[f]['arr'] > 10] = 0
+        #
         rstr_dict[f]['mu'] = np.nanmean(rstr_dict[f]['arr'])
         rstr_dict[f]['sigma'] = np.nanstd(rstr_dict[f]['arr'])
         rstr_dict[f]['CV'] = rstr_dict[f]['sigma'] / rstr_dict[f]['mu']
         rstr_dict[f]['profile'] = src.profile
         rstr_dict[f]['year'] = re.findall('(\d{4})', f)
+
+        rstr_dict[f]['arr']
 
     return rstr_dict
 
@@ -100,18 +106,6 @@ def create_pairs(d, compare_self=False):
     else:
         print(len(rstr_pairs), " pairs created")
 
-        # np.random.seed(0)
-        # runf = yr + ' v. Random Uniform'
-        #
-        # rstr_pairs[runf] = {}
-        #
-        # rstr_pairs[runf][yr] = {}
-        # rstr_pairs[runf]['Random Uniform'] = {}
-        # rstr_pairs[runf][yr]['arr'] = d[k]['arr']
-        # runf_arr = np.random.uniform(d[k]['arr'].min(),
-        #                              d[k]['arr'].max(),
-        #                              d[k]['arr'].shape)
-        # rstr_pairs[runf]['Random Uniform']['arr'] = runf_arr
     return rstr_pairs
 
 
@@ -156,8 +150,8 @@ def results_to_dataframe(d, outpath):
     rdf['Avg. Rank'] = rdf.mean(axis=1)
     print(rdf.head(15))
 
-    df.to_csv(os.path.join(outpath) + 'iqa_results.csv')
-    rdf.to_csv(os.path.join(outpath) + 'iqa_ranks.csv')
+    df.to_csv(os.path.join(outpath) + '_fidelity_results.csv')
+    #rdf.to_csv(os.path.join(outpath) + 'fidelity_ranks.csv')
     return (df, rdf)
 
 
