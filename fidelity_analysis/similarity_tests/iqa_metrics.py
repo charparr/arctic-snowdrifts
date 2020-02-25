@@ -21,33 +21,52 @@ def compute_nrmse(im1, im2):
         im2 (ndarray): 2d array, same size/shape/type as im1
     Returns:
         nrmse (tuple): nrmse value and array of nrsme values
-    Raises:
-        Exception: description
     """
     print("Computing NRMSE...")
     start = timer()
 
+    # Determine which arr has larger range
+    # Designate as 'true'
+    
     im1_max = np.nanmax(im1)
     im2_max = np.nanmax(im2)
     im1_min = np.nanmin(im1)
     im2_min = np.nanmin(im2)
     both_max = max(im1_max, im2_max)
     both_min = min(im1_min, im2_min)
+    if (im2_max - im2_min) >= (im1_max - im1_min):
+        im_true = np.nan_to_num(im2)
+        im_test = np.nan_to_num(im1)
+    else:
+        im_true = np.nan_to_num(im1)
+        im_test = np.nan_to_num(im2)
+
+    # Compute Square Error (array)
+    square_e = ((im_true - im_test) ** 2)
+    # Compute the Mean-Square Error (index value)
+    mse = np.nanmean(square_e)
+    # Compute Root Square Error Array
+    rqse = np.sqrt(square_e)
+    # Compute Root Mean Square Error (index value)
+    rmse = np.sqrt(mse)
+    # Normalizations
+    # Alternates (min-max both im, min-max true im, euclidean)
+    #denom = both_max - both_min
+    #denom = max(im_true) - min(im_true)
+    #denom = np.sqrt(np.mean((im_true * im_test)))
+    denom = np.nanmean(im_true)
+    
+    nrmse_arr = (rqse / denom)
 
     # Compute global index NRMSE value
-    mse = np.mean(np.square(im1 - im2))
-    min_max_nrmse = np.sqrt(mse) / (both_max - both_min)
-    # Compute NRSE array
-    square_error = np.square(im1 - im2)
-    min_max_nrmse_arr = np.sqrt(square_error) / (both_max - both_min)
-    # Reverse scale so 1 is 'good', 0 is 'bad'
-    nrmse_flip = round(1 - min_max_nrmse, 3)
-    nrmse_arr_flip = 1 - min_max_nrmse_arr
+    nrmse_index = np.sqrt(rmse / denom)
 
-    nrmse_results = (nrmse_flip, nrmse_arr_flip)
+    # Reverse scale so 1 is good match and 0 is bad
+    nrmse_index_0to1 = 1 - nrmse_index
+    nrmse_arr_0to1 = 1 - nrmse_arr
 
+    nrmse_results = (nrmse_index_0to1, nrmse_arr_0to1)
     print("Complete. " + str((timer() - start))[0:4] + " s")
-
     return nrmse_results
 
 
@@ -79,8 +98,6 @@ def compute_ssim(im1, im2):
         im2 (ndarray): 2d array, same size/shape as im1
     Returns:
         ssim (tuple): mean value and array of SSIM values
-    Raises:
-        Exception: description
     """
 
     start = timer()
@@ -288,7 +305,7 @@ def compute_all_iqa(im1, im2):
     sim = dict()
     sim['nrmse'], sim['nrmse_arr'] = compute_nrmse(im1, im2)
     sim['ssim'], sim['ssim_arr'] = compute_ssim(im1, im2)
-    sim['cwssim'], sim['cwssim_arr'] = cw_ssim(im1, im2, 10)
+    sim['cwssim'], sim['cwssim_arr'] = cw_ssim(im1, im2, 30)
     sim['gms'], sim['gms_arr'] = compute_gms(im1, im2)
 
     return sim
