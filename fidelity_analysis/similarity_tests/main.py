@@ -20,7 +20,7 @@ start = timer()
 for basedir in all_base_dirs:
     
     outdir = os.path.join('../results', basedir.split('/')[-2])
-    outf = outdir + '_fidelity_results.csv'
+    #outf = outdir + '_fidelity_results.csv'
 
     # Read in raster from data from snow depth maps
     d = rastersstats_to_dict(basedir)
@@ -34,7 +34,7 @@ for basedir in all_base_dirs:
         im2 = pairs[p][ys[1]]['arr']
         pairs[p]['results'] = compute_all_iqa(im1, im2)
 
-    dfs = results_to_dataframe(pairs, outf)
+    dfs = results_to_dataframe(pairs, outdir)
 
     # # Create Snow Depth Plots, each scene and year
     # #plot_comparison_inputs_stats(d, pltdir)
