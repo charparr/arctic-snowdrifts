@@ -3,17 +3,16 @@ from timeit import default_timer as timer
 from iqa_metrics import compute_all_iqa
 from similarity_utils import *
 
-#all_base_dirs = ['../../gis/raster/hv/snow_depth/corrected/kidney_lake/']
-
-all_base_dirs = ['../../gis/raster/clpx/snow_depth/corrected/fidelity_subsets/clpx_outcrops/']
+all_base_dirs = ['../../gis/raster/hv/snow_depth/corrected/wt_and_lake/']
+# all_base_dirs = ['../../gis/raster/hv/snow_depth/corrected/kidney_lake/']
+# all_base_dirs = ['../../gis/raster/clpx/snow_depth/corrected/fidelity_subsets/clpx_outcrops/']
 
 
 start = timer()
 
 for basedir in all_base_dirs:
     
-    outdir = os.path.join('../results', basedir.split('/')[-2])
-    outf = outdir + '_fidelity_results.csv'
+    outdir = os.path.join('../results/hv_wt_and_lake', basedir.split('/')[-2])
 
     # Read in raster from data from snow depth maps
     d = rastersstats_to_dict(basedir)
@@ -27,7 +26,7 @@ for basedir in all_base_dirs:
         im2 = pairs[p][ys[1]]['arr']
         pairs[p]['results'] = compute_all_iqa(im1, im2)
 
-    dfs = results_to_dataframe(pairs, outf)
+    dfs = results_to_dataframe(pairs, outdir)
 
     # # Create Snow Depth Plots, each scene and year
     # #plot_comparison_inputs_stats(d, pltdir)
@@ -35,7 +34,7 @@ for basedir in all_base_dirs:
 
     # # Plot IQA maps and save them to disk
     for p in pairs.keys():
-        save_iqa_maps_to_geotiff(pairs[p], p, '../results/clpx_outcrops/')
+        save_iqa_maps_to_geotiff(pairs[p], p, '../results/hv_wt_and_lake/')
 
     # #plot_iqa_scores_from_dfs(dfs, pltdir)
 
