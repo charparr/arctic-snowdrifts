@@ -62,10 +62,15 @@ def compute_nrmse(im1, im2):
     nrmse_index = np.sqrt(rmse / denom)
 
     # Reverse scale so 1 is good match and 0 is bad
+    nrmse_arr *= 1.0/nrmse_arr.max()    # Uses 1 division and image.size multiplications
+
     nrmse_index_0to1 = 1 - nrmse_index
+    
     nrmse_arr_0to1 = 1 - nrmse_arr
 
-    nrmse_results = (nrmse_index_0to1, nrmse_arr_0to1)
+    normalized = (nrmse_arr_0to1-nrmse_arr_0to1.min())/(nrmse_arr_0to1.max()-nrmse_arr_0to1.min())
+
+    nrmse_results = (nrmse_index_0to1, normalized)
     print("Complete. " + str((timer() - start))[0:4] + " s")
     return nrmse_results
 
