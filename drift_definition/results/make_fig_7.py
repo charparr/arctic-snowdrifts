@@ -13,17 +13,19 @@ ax2 = fig.add_subplot(222, sharey = ax1)
 ax3 = fig.add_subplot(223, sharex = ax1)
 ax4 = fig.add_subplot(224, sharey = ax3, sharex=ax2)
 
+df.rename(columns={'Drift Volume / Drift Area (Avg. Drift Depth) $m$':'Avg. Drift Depth $m$'}, inplace=True)
+
 sns.boxplot(x="Swath", y='Drift Susceptibility $m$',
             data=df, ax=ax1)
 
 sns.pointplot(x="Year", y="Drift Susceptibility $m$",
-                hue="Swath", data=df, ax=ax2, markers=["o", "x"])
+                hue="Swath", data=df, ax=ax2, markers=["x", "o"])
 
-sns.boxplot(x="Swath", y='Drift Volume / Drift Area (Avg. Drift Depth) $m$',
+sns.boxplot(x="Swath", y='Avg. Drift Depth $m$',
             data=df, ax=ax3)
 
-sns.pointplot(x="Year", y='Drift Volume / Drift Area (Avg. Drift Depth) $m$',
-                hue="Swath", data=df, ax=ax4, markers=["o", "x"])
+sns.pointplot(x="Year", y='Avg. Drift Depth $m$',
+                hue="Swath", data=df, ax=ax4, markers=["x", "o"])
 
 ax1.xaxis.set_visible(False)
 ax2.yaxis.set_visible(False)
@@ -34,8 +36,9 @@ ax4.yaxis.set_visible(False)
 fig.subplots_adjust(wspace=0)
 fig.subplots_adjust(wspace=0,hspace=0)
 
+#plt.show()
+
 plt.savefig('../../figs/f7_general_census_4panel_300.png',
             dpi=300, bbox_inches='tight')
-
 plt.savefig('../../figs/f7_general_census_4panel_600.png',
             dpi=600, bbox_inches='tight')
